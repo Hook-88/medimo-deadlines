@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  text-align: center;
+}
+
+main {
+  width: 550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  text-align: justify;
+}
+
+.red-border {
+  border: 1px dotted red;
+}
+
+.card {
+  padding: 1em;
+  max-width: 50%;
+}
