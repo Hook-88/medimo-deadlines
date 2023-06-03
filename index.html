@@ -22,6 +22,41 @@
         <!-- RESULT -->
       </div>
     </div>
+
+    <div class="card red-border">
+      <h2>Bereken deadline Baxter</h2>
+      <p>Geef de uiterste tijd van voorschrijven op van medicatie wat vandaag per baxter geleverd moet worden.</p>
+      <select name="pets" id="day-select-prescription">
+          <option value="">--Kies een dag--</option>
+          <option value="0">Maandag</option>
+          <option value="1">Dinsdag</option>
+          <option value="2">Woensdag</option>
+          <option value="3">Donderdag</option>
+          <option value="4">Vrijdag</option>
+          <option value="5">Zaterdag</option>
+          <option value="6">Zondag</option>
+      </select>
+      <input type="time" name="" id="deadline-baxter-prescription-time" value="00:00">
+      
+      <p>Geef de ingangsdatum en -tijd op van de baxter</p>
+      <select name="pets" id="day-select-prescription">
+        <option value="">--Kies een dag--</option>
+        <option value="0">Maandag</option>
+        <option value="1">Dinsdag</option>
+        <option value="2">Woensdag</option>
+        <option value="3">Donderdag</option>
+        <option value="4">Vrijdag</option>
+        <option value="5">Zaterdag</option>
+        <option value="6">Zondag</option>
+      </select>
+      <input type="time" name="" id="deadline-baxter-prescription-time" value="00:00">
+      <button id="calc-deadline-baxter-btn">Bereken deadline baxter</button>
+      <div id="deadline-today-result">
+        <p>De deadline vandaag is <strong>600</strong> minuten</p>
+        <button>Kopieer deadline</button>
+      </div>
+    </div>
+
   </main>
   <script src="./script.js" type="module"></script>
 </body>
