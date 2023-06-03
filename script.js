@@ -1,54 +1,14 @@
 class Deadlines {
   constructor() {
     this.minutesPerDay = 24 * 60
-    this.deadlineTodayTimeString = ''
-    this.deadlineTodayTimeNumber = 0
     this.deadlineBaxter = {
-      deadlineBaxterPrescriptionTimeString : '',
-      deadlineBaxterPrescriptionDayString: '',
       deadlineBaxterPrescriptionTimeNumber: 0,
       deadlineBaxterPrescriptionDayNumber: 0,
       deadlineBaxterPrescriptionNumber: 0,
     }
   }
-
-  setDeadlineTodayTimeString() {
-    this.deadlineTodayTimeString = document.getElementById('deadline-today-time').value
-  }
-  setDeadlineBaxterPrescriptionTimeString() {
-    this.deadlineBaxter.deadlineBaxterPrescriptionTimeString = document.getElementById('deadline-baxter-prescription-time').value
-  }
-  setDeadlineBaxterPrescriptionDayString() {
-    this.deadlineBaxter.deadlineBaxterPrescriptionDayString = document.getElementById('day-select-prescription').value
-  }
-
-
-  setDeadlineTodayTimeNumber() {
-    this.setDeadlineTodayTimeString()
-    this.deadlineTodayTimeNumber = getTimeNumber(this.deadlineTodayTimeString)
-  }
-
-  setDeadlineBaxterPrescriptionTimeNumber() {
-    this.setDeadlineBaxterPrescriptionTimeString()
-    this.deadlineBaxter.deadlineBaxterPrescriptionTimeNumber = getTimeNumber(this.deadlineBaxter.deadlineBaxterPrescriptionTimeString)
-  }
-  setDeadlineBaxterPrescriptionDayNumber() {
-    this.setDeadlineBaxterPrescriptionDayString()
-    this.deadlineBaxter.deadlineBaxterPrescriptionDayNumber = getDayNumber(this.deadlineBaxter.deadlineBaxterPrescriptionDayString)
-  }
-
-  setDeadlineBaxterPrescriptionNumber() {
-    this.setDeadlineBaxterPrescriptionDayNumber()
-    this.setDeadlineBaxterPrescriptionTimeNumber()
-    this.deadlineBaxter.deadlineBaxterPrescriptionNumber = 
-      this.deadlineBaxter.deadlineBaxterPrescriptionDayNumber + 
-      this.deadlineBaxter.deadlineBaxterPrescriptionTimeNumber
-    console.log(this.deadlineBaxter.deadlineBaxterPrescriptionNumber)
-  }
-
   getDeadlineToday() {
-    this.setDeadlineTodayTimeNumber()
-    return this.minutesPerDay - this.deadlineTodayTimeNumber
+    return this.minutesPerDay - getTimeNumber(document.getElementById('deadline-today-time').value)
   }
   getDeadlineTodayHtml() {
     this.getDeadlineToday()
@@ -57,6 +17,25 @@ class Deadlines {
       <button>Kopieer deadline</button>
     `
   }
+  
+  setDeadlineBaxterPrescriptionTimeNumber() {
+    this.deadlineBaxter.deadlineBaxterPrescriptionTimeNumber = getTimeNumber(document.getElementById('deadline-baxter-prescription-time').value)
+  }
+  setDeadlineBaxterPrescriptionDayNumber() {
+    this.deadlineBaxter.deadlineBaxterPrescriptionDayNumber = getDayNumber(document.getElementById('day-select-prescription').value)
+  }
+
+  setDeadlineBaxterPrescriptionNumber() {
+    this.setDeadlineBaxterPrescriptionDayNumber()
+    this.setDeadlineBaxterPrescriptionTimeNumber()
+    this.deadlineBaxter.deadlineBaxterPrescriptionNumber = 
+      this.deadlineBaxter.deadlineBaxterPrescriptionDayNumber + 
+      this.deadlineBaxter.deadlineBaxterPrescriptionTimeNumber
+    console.log(this.deadlineBaxter.deadlineBaxterPrescriptionDayNumber)
+  }
+
+  
+  
 
   
 }
