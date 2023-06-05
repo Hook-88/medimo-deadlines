@@ -4,13 +4,22 @@ class Deadlines {
   constructor() {
     this.minutesPerDay = 24 * 60
     this.minutesPerWeek = this.minutesPerDay * 7
+    this.deadlineToday = null
+    this.deadlineBaxter = null
+    this.deadlineDelivery = null
   }
 
   getDeadlineTodayHtml() {
+    this.deadlineToday = this.getDeadlineToday()
     return `
-      <p>De deadline vandaag is <strong>${this.getDeadlineToday()}</strong> minuten</p>
+      <p>De deadline vandaag is <strong>${this.deadlineToday}</strong> minuten</p>
       <div class="btns-container">
-        <button class="btn-red">Reset deadline</button>
+        <button 
+          class="btn-red" 
+          data-reset="deadline-today-result"
+          >
+            Reset deadline
+        </button>
         <button class="btn-green">Kopieer deadline</button>
       </div>
     `
@@ -20,10 +29,16 @@ class Deadlines {
   }
   
   getDeadlineBaxterHtml() {
+    this.deadlineBaxter = this.getDeadlineBaxter()
     return `
-      <p>De deadline Baxter is <strong>${this.getDeadlineBaxter()}</strong> minuten</p>
+      <p>De deadline Baxter is <strong>${this.deadlineBaxter}</strong> minuten</p>
       <div class="btns-container">
-        <button class="btn-red">Reset deadline</button>
+        <button 
+          class="btn-red"
+          data-reset="deadline-baxter-result"
+          >
+            Reset deadline
+          </button>
         <button class="btn-green">Kopieer deadline</button>
       </div>
     `
@@ -53,10 +68,16 @@ class Deadlines {
     return getDayNumber(document.getElementById('day-select-start-baxter').value)
   }
   getDeadlineDeliveryHtml() {
+    this.deadlineDelivery = this.getDeadlineDelivery()
     return `
-      <p>De deadline Leverdag is <strong>${this.getDeadlineDelivery()}</strong> minuten</p>
+      <p>De deadline Leverdag is <strong>${this.deadlineDelivery}</strong> minuten</p>
       <div class="btns-container">
-        <button class="btn-red">Reset deadline</button>
+        <button 
+          class="btn-red"
+          data-reset="deadline-delivery-result"
+          >
+            Reset deadline
+          </button>
         <button class="btn-green">Kopieer deadline</button>
       </div>
     `

@@ -1,4 +1,5 @@
 import {Deadlines} from './deadline.js'
+import { clearContainer, resetTimeInput } from './helpers.js'
 
 let newDeadline = new Deadlines
 
@@ -9,7 +10,13 @@ document.addEventListener('click', e => {
     renderBaxterDeadline()
   } else if (e.target.id === 'calc-deadline-delivery-btn') {
     renderDeliveryDeadline()
+  } else {
+    if (e.target.dataset.reset) {
+      clearContainer(e.target.dataset.reset)
+      resetTimeInput(document.querySelectorAll(`[data-time-input="${e.target.dataset.reset}"]`))
+    }  
   }
+  
 })
 
 

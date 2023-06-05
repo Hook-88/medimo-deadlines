@@ -8,4 +8,14 @@ function getDayNumber(str) {
   return parseFloat(str) * 24 * 60
 }
 
-export {getTimeNumber, getDayNumber}
+function clearContainer(containerEl) {
+  document.getElementById(containerEl).innerHTML = ''
+}
+
+function resetTimeInput(inputElArray) {
+  inputElArray.forEach(input => {
+    input.value = "00:00"
+  });
+}
+
+export {getTimeNumber, getDayNumber, clearContainer, resetTimeInput}

@@ -76,6 +76,11 @@ button {
   color: #fff;
 }
 
+button:hover,
+button:active {
+  cursor: pointer;
+}
+
 .align-btn-right {
   margin-left: auto;
 }
