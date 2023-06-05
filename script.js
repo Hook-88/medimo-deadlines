@@ -39,6 +39,13 @@ class Deadlines {
     return deadline < 0 ? deadline + this.minutesPerWeek : deadline
   }
 
+  getDeadlineBaxterHtml() {
+    return `
+      <p>De deadline Baxter is <strong>${this.getDeadlineBaxter()}</strong> minuten</p>
+      <button>Kopieer deadline</button>
+    `
+  }
+
 
 }
 
@@ -58,13 +65,17 @@ document.addEventListener('click', e => {
   if (e.target.id === 'calc-deadline-today-btn') {
     render()
   } else if (e.target.id === 'calc-deadline-baxter-btn') {
-    console.log(newDeadline.getDeadlineBaxter())
+    renderBaxterDeadline()
   }
   
 })
 
 function render() {
   document.getElementById('deadline-today-result').innerHTML = newDeadline.getDeadlineTodayHtml()
+}
+
+function renderBaxterDeadline() {
+  document.getElementById('deadline-baxter-result').innerHTML = newDeadline.getDeadlineBaxterHtml()
 }
 
 
