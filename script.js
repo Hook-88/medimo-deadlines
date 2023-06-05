@@ -14,7 +14,9 @@ document.addEventListener('click', e => {
     if (e.target.dataset.reset) {
       clearContainer(e.target.dataset.reset)
       resetTimeInput(document.querySelectorAll(`[data-time-input="${e.target.dataset.reset}"]`))
-    }  
+    } else if(e.target.dataset.copy) {
+      navigator.clipboard.writeText(newDeadline[e.target.dataset.copy])
+    }
   }
   
 })

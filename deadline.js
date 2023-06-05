@@ -20,7 +20,10 @@ class Deadlines {
           >
             Reset deadline
         </button>
-        <button class="btn-green">Kopieer deadline</button>
+        <button 
+          class="btn-green"
+          data-copy="deadlineToday"
+          >Kopieer deadline</button>
       </div>
     `
   }
@@ -39,7 +42,10 @@ class Deadlines {
           >
             Reset deadline
           </button>
-        <button class="btn-green">Kopieer deadline</button>
+        <button 
+          class="btn-green"
+          data-copy="deadlineBaxter"
+          >Kopieer deadline</button>
       </div>
     `
   }
@@ -78,7 +84,10 @@ class Deadlines {
           >
             Reset deadline
           </button>
-        <button class="btn-green">Kopieer deadline</button>
+        <button 
+          class="btn-green"
+          data-copy="deadlineDelivery"
+          >Kopieer deadline</button>
       </div>
     `
   }
