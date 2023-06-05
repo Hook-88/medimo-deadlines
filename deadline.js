@@ -1,4 +1,4 @@
-import {getTimeNumber, getDayNumber} from './helpers.js'
+import { getTimeNumber, getDayNumber } from './helpers.js'
 
 class Deadlines {
   constructor() {
@@ -52,27 +52,6 @@ class Deadlines {
   getDeadlineBaxterStartDayNumber() {
     return getDayNumber(document.getElementById('day-select-start-baxter').value)
   }
-
-
-  getDeadlineOrderTimeNumber() {
-    return getTimeNumber(document.getElementById('deadline-order-time').value)
-  }
-  getDeadlineOrderDayNumber() {
-    return getDayNumber(document.getElementById('day-select-order').value)
-  }
-  getDeadlineOrderNumber() {
-    return this.getDeadlineOrderTimeNumber() + this.getDeadlineOrderDayNumber()
-  }
-
-  getDeadlineDeliveryNumber() {
-    return getDayNumber(document.getElementById('day-select-delivery').value)
-  }
-
-  getDeadlineDelivery() {
-    const deadline = this.getDeadlineDeliveryNumber() - this.getDeadlineOrderNumber()
-    return deadline < 0 ? deadline + this.minutesPerWeek : deadline
-  }
-
   getDeadlineDeliveryHtml() {
     return `
       <p>De deadline Leverdag is <strong>${this.getDeadlineDelivery()}</strong> minuten</p>
@@ -82,6 +61,23 @@ class Deadlines {
       </div>
     `
   }
+  getDeadlineDelivery() {
+    const deadline = this.getDeadlineDeliveryNumber() - this.getDeadlineOrderNumber()
+    return deadline < 0 ? deadline + this.minutesPerWeek : deadline
+  }
+  getDeadlineDeliveryNumber() {
+    return getDayNumber(document.getElementById('day-select-delivery').value)
+  }
+
+  getDeadlineOrderNumber() {
+    return this.getDeadlineOrderTimeNumber() + this.getDeadlineOrderDayNumber()
+  }
+  getDeadlineOrderTimeNumber() {
+    return getTimeNumber(document.getElementById('deadline-order-time').value)
+  }
+  getDeadlineOrderDayNumber() {
+    return getDayNumber(document.getElementById('day-select-order').value)
+  }  
 }
 
 export {Deadlines}
