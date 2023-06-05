@@ -30,9 +30,10 @@ class Deadlines {
   getDeadlineToday() {
     return this.minutesPerDay - getTimeNumber(document.getElementById('deadline-today-time').value)
   }
-  
-  getDeadlineBaxterHtml() {
+  setDeadlineBaxter() {
     this.deadlineBaxter = this.getDeadlineBaxter()
+  }
+  getDeadlineBaxterHtml() {
     return `
       <p>De deadline Baxter is <strong>${this.deadlineBaxter}</strong> minuten</p>
       <div class="btns-container">
@@ -73,8 +74,11 @@ class Deadlines {
   getDeadlineBaxterStartDayNumber() {
     return getDayNumber(document.getElementById('day-select-start-baxter').value)
   }
-  getDeadlineDeliveryHtml() {
+  setDeadlineDelivery() {
     this.deadlineDelivery = this.getDeadlineDelivery()
+  }
+
+  getDeadlineDeliveryHtml() {
     return `
       <p>De deadline Leverdag is <strong>${this.deadlineDelivery}</strong> minuten</p>
       <div class="btns-container">
