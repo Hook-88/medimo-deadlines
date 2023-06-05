@@ -1,11 +1,7 @@
 class Deadlines {
   constructor() {
     this.minutesPerDay = 24 * 60
-    this.deadlineBaxter = {
-      deadlineBaxterPrescriptionTimeNumber: 0,
-      deadlineBaxterPrescriptionDayNumber: 0,
-      deadlineBaxterPrescriptionNumber: 0,
-    }
+    this.minutesPerWeek = this.minutesPerDay * 7
   }
   getDeadlineToday() {
     return this.minutesPerDay - getTimeNumber(document.getElementById('deadline-today-time').value)
@@ -18,26 +14,27 @@ class Deadlines {
     `
   }
   
-  setDeadlineBaxterPrescriptionTimeNumber() {
-    this.deadlineBaxter.deadlineBaxterPrescriptionTimeNumber = getTimeNumber(document.getElementById('deadline-baxter-prescription-time').value)
+  getDeadlineBaxterSendTimeNumber() {
+    return getTimeNumber(document.getElementById('deadline-baxter-prescription-time').value)
   }
-  setDeadlineBaxterPrescriptionDayNumber() {
-    this.deadlineBaxter.deadlineBaxterPrescriptionDayNumber = getDayNumber(document.getElementById('day-select-prescription').value)
+  getDeadlineBaxterSendDayNumber() {
+    return getDayNumber(document.getElementById('day-select-prescription').value)
   }
-
-  setDeadlineBaxterPrescriptionNumber() {
-    this.setDeadlineBaxterPrescriptionDayNumber()
-    this.setDeadlineBaxterPrescriptionTimeNumber()
-    this.deadlineBaxter.deadlineBaxterPrescriptionNumber = 
-      this.deadlineBaxter.deadlineBaxterPrescriptionDayNumber + 
-      this.deadlineBaxter.deadlineBaxterPrescriptionTimeNumber
-    console.log(this.deadlineBaxter.deadlineBaxterPrescriptionDayNumber)
+  getDeadlineBaxterSendNumber() {
+    return this.getDeadlineBaxterSendTimeNumber() + this.getDeadlineBaxterSendDayNumber()
   }
 
-  
-  
+  getDeadlineBaxterStartTimeNumber() {
+    return getTimeNumber(document.getElementById('deadline-baxter-start-time').value)
+  }
+  getDeadlineBaxterStartDayNumber() {
+    return getDayNumber(document.getElementById('day-select-start-baxter').value)
+  }
+  getDeadlineBaxterStartNumber() {
+    return this.getDeadlineBaxterStartTimeNumber() + this.getDeadlineBaxterStartDayNumber()
+  }
 
-  
+
 }
 
 function getTimeNumber(str) {
@@ -56,7 +53,7 @@ document.addEventListener('click', e => {
   if (e.target.id === 'calc-deadline-today-btn') {
     render()
   } else if (e.target.id === 'calc-deadline-baxter-btn') {
-    newDeadline.setDeadlineBaxterPrescriptionNumber()
+    console.log(newDeadline.getDeadlineBaxterStartNumber())
   }
   
 })
