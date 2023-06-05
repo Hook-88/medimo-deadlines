@@ -15,7 +15,13 @@ function clearContainer(containerEl) {
 function resetTimeInput(inputElArray) {
   inputElArray.forEach(input => {
     input.value = "00:00"
-  });
+  })
 }
 
-export {getTimeNumber, getDayNumber, clearContainer, resetTimeInput}
+function resetDayInput(selectElArray) {
+  selectElArray.forEach(select => {
+    select.value = ""
+  })
+}
+
+export {getTimeNumber, getDayNumber, clearContainer, resetTimeInput, resetDayInput}
