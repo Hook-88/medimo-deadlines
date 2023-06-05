@@ -34,6 +34,11 @@ class Deadlines {
     return this.getDeadlineBaxterStartTimeNumber() + this.getDeadlineBaxterStartDayNumber()
   }
 
+  getDeadlineBaxter() {
+    const deadline = this.getDeadlineBaxterStartNumber() - this.getDeadlineBaxterSendNumber()
+    return deadline < 0 ? deadline + this.minutesPerWeek : deadline
+  }
+
 
 }
 
@@ -53,7 +58,7 @@ document.addEventListener('click', e => {
   if (e.target.id === 'calc-deadline-today-btn') {
     render()
   } else if (e.target.id === 'calc-deadline-baxter-btn') {
-    console.log(newDeadline.getDeadlineBaxterStartNumber())
+    console.log(newDeadline.getDeadlineBaxter())
   }
   
 })
