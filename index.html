@@ -5,6 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Medimo deadlines berekenen</title>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
   <!-- stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,20 +16,26 @@
   <header>
     <h1>Medimo deadlines berekenen</h1>
   </header>
+  <!-- calc deadline today -->
   <main class="red-border">
     <div class="card red-border">
-      <h2>Bereken deadline vandaag</h2>
-      <p>Geef de uiterste tijd van voorschrijven op van medicatie wat vandaag nog geleverd moet worden.</p>
-      <input type="time" name="" id="deadline-today-time" value="00:00">
-      <button id="calc-deadline-today-btn">Bereken deadline vandaag</button>
-      <div id="deadline-today-result">
-        <!-- RESULT -->
+      <h2 class="card-title">Bereken deadline vandaag</h2>
+      <div class="card-content">
+        <p>Geef de uiterste tijd van voorschrijven op van medicatie wat vandaag nog geleverd moet worden.</p>
+        <input type="time" name="" id="deadline-today-time" value="00:00">
+        <button id="calc-deadline-today-btn">Bereken deadline vandaag</button>
+        <div id="deadline-today-result">
+          <!-- RESULT -->
+        </div>
       </div>
+      
     </div>
 
+    <!-- calc baxter deadline -->
     <div class="card red-border">
-      <h2>Bereken deadline Baxter</h2>
-      <p>Geef de uiterste tijd van voorschrijven op van medicatie wat vandaag per baxter geleverd moet worden.</p>
+      <h2 class="card-title">Bereken deadline Baxter</h2>
+      <div class="card-content">
+        <p>Geef de uiterste tijd van voorschrijven op van medicatie wat vandaag per baxter geleverd moet worden.</p>
       <select name="weekdays" id="day-select-prescription">
           <option value="">--Kies een dag--</option>
           <option value="0">Maandag</option>
@@ -38,7 +48,7 @@
       </select>
       <input type="time" name="" id="deadline-baxter-prescription-time" value="00:00">
       
-      <p>Geef de ingangsdatum en -tijd op van de baxter</p>
+      <p>Geef de ingangsdag en -tijd op van de baxter</p>
       <select name="weekdays" id="day-select-start-baxter">
         <option value="">--Kies een dag--</option>
         <option value="0">Maandag</option>
@@ -55,6 +65,43 @@
       <div id="deadline-baxter-result">
         <!-- RESULT -->
       </div>
+      </div>
+      
+    </div>
+
+    <div class="card red-border">
+      <h2 class="card-title">Bereken deadline levering</h2>
+      <div class="card-content">
+        <p>Geef de uiterste besteldag en -tijd van herhalen op van medicatie wat per weeklevering geleverd moet worden.</p>
+        <select name="weekdays" id="day-select-order">
+            <option value="">--Kies een dag--</option>
+            <option value="0">Maandag</option>
+            <option value="1">Dinsdag</option>
+            <option value="2">Woensdag</option>
+            <option value="3">Donderdag</option>
+            <option value="4">Vrijdag</option>
+            <option value="5">Zaterdag</option>
+            <option value="6">Zondag</option>
+        </select>
+        <input type="time" name="" id="deadline-order-time" value="00:00">
+        
+        <p>Geef de dag van de weeklevering op</p>
+        <select name="weekdays" id="day-select-delivery">
+          <option value="">--Kies een dag--</option>
+          <option value="0">Maandag</option>
+          <option value="1">Dinsdag</option>
+          <option value="2">Woensdag</option>
+          <option value="3">Donderdag</option>
+          <option value="4">Vrijdag</option>
+          <option value="5">Zaterdag</option>
+          <option value="6">Zondag</option>
+        </select>
+        <button id="calc-deadline-delivery-btn">Bereken deadline leverdag</button>
+        
+        <div id="deadline-delivery-result">
+          <!-- RESULT -->
+        </div>
+      </div>  
     </div>
 
   </main>
