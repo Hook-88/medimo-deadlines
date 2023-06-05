@@ -37,6 +37,7 @@ p {
 
 .card {
   background-color: #fff;
+  max-width: 600px;
 }
 
 .card-title {
@@ -67,7 +68,6 @@ input {
 
 button {
   margin-top: 1em;
-  display: block;
   padding: .5rem 1rem;
   font-family: inherit;
   background-color: #1c4b84;
@@ -83,4 +83,15 @@ button {
 .btn-green {
   background-color: #5CC082;
   border-color: #5CC082;
+}
+
+.btn-red {
+  background-color: #cd4d44;
+  border-color: #cd4d44; 
+}
+
+.btns-container {
+  display: flex;
+  justify-content: end;
+  gap: .5rem;
 }
