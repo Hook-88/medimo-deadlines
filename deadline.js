@@ -23,7 +23,9 @@ class Deadlines {
         <button 
           class="btn-green"
           data-copy="deadlineToday"
-          >Kopieer deadline</button>
+          >
+            Kopieer deadline
+          </button>
       </div>
     `
   }

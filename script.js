@@ -5,7 +5,7 @@ let newDeadline = new Deadlines
 
 document.addEventListener('click', e => { 
   if (e.target.id === 'calc-deadline-today-btn') {
-    render()
+    renderDeadlineToday()
   } else if (e.target.id === 'calc-deadline-baxter-btn') {
       newDeadline.setDeadlineBaxter()
       if(newDeadline.deadlineBaxter) {
@@ -28,8 +28,16 @@ document.addEventListener('click', e => {
   
 })
 
+document.addEventListener('change', e => {
+  if(e.target.id === 'deadline-today-time') {
+    renderDeadlineToday()
+  }
+    
 
-function render() {
+})
+
+
+function renderDeadlineToday() {
   document.getElementById('deadline-today-result').innerHTML = newDeadline.getDeadlineTodayHtml()
 }
 
