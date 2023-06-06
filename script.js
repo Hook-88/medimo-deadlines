@@ -29,8 +29,19 @@ document.addEventListener('click', e => {
 })
 
 document.addEventListener('change', e => {
+
   if(e.target.id === 'deadline-today-time') {
     renderDeadlineToday()
+  } else if(e.target.dataset.baxter) {
+    newDeadline.setDeadlineBaxter()
+    if(newDeadline.deadlineBaxter) {
+      renderBaxterDeadline()
+    }
+  } else if(e.target.dataset.delivery) {
+    newDeadline.setDeadlineDelivery()
+    if (newDeadline.deadlineDelivery) {
+      renderDeliveryDeadline()
+    }
   }
     
 

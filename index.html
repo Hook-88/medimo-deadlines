@@ -36,7 +36,12 @@
       <h2 class="card-title">Bereken deadline Baxter</h2>
       <div class="card-content">
         <p>Geef de uiterste tijd van voorschrijven op van medicatie wat vandaag per baxter geleverd moet worden.</p>
-        <select name="weekdays" id="day-select-prescription" data-day-input="deadline-baxter-result">
+        <select 
+          name="weekdays" 
+          id="day-select-prescription" 
+          data-day-input="deadline-baxter-result" 
+          data-baxter="input"
+          >
             <option value="">--Kies een dag--</option>
             <option value="0">Maandag</option>
             <option value="1">Dinsdag</option>
@@ -46,34 +51,53 @@
             <option value="5">Zaterdag</option>
             <option value="6">Zondag</option>
         </select>
-        <input type="time" name="" id="deadline-baxter-prescription-time" value="00:00" data-time-input="deadline-baxter-result">
-        
+        <input 
+          type="time" 
+          id="deadline-baxter-prescription-time" 
+          value="00:00" 
+          data-time-input="deadline-baxter-result" 
+          data-baxter="input"
+          >
         <p>Geef de ingangsdag en -tijd op van de baxter</p>
-        <select name="weekdays" id="day-select-start-baxter" data-day-input="deadline-baxter-result">
-          <option value="">--Kies een dag--</option>
-          <option value="0">Maandag</option>
-          <option value="1">Dinsdag</option>
-          <option value="2">Woensdag</option>           
-          <option value="3">Donderdag</option>
-          <option value="4">Vrijdag</option>
-          <option value="5">Zaterdag</option>
-          <option value="6">Zondag</option>
+        <select 
+          name="weekdays" 
+          id="day-select-start-baxter" 
+          data-day-input="deadline-baxter-result"
+          data-baxter="input"
+          >
+            <option value="">--Kies een dag--</option>
+            <option value="0">Maandag</option>
+            <option value="1">Dinsdag</option>
+            <option value="2">Woensdag</option>           
+            <option value="3">Donderdag</option>
+            <option value="4">Vrijdag</option>
+            <option value="5">Zaterdag</option>
+            <option value="6">Zondag</option>
         </select>
-        <input type="time" name="" id="deadline-baxter-start-time" value="00:00" data-time-input="deadline-baxter-result">
-        <button id="calc-deadline-baxter-btn">Bereken deadline baxter</button>
-        
+        <input 
+          type="time" 
+          id="deadline-baxter-start-time" 
+          value="00:00" 
+          data-time-input="deadline-baxter-result"
+          data-baxter="input"
+        >
+        <!-- <button id="calc-deadline-baxter-btn">Bereken deadline baxter</button> -->        
         <div id="deadline-baxter-result">
           <!-- RESULT -->
         </div>
-      </div>
-      
+      </div>   
     </div>
 
     <div class="card red-border">
       <h2 class="card-title">Bereken deadline levering</h2>
       <div class="card-content">
         <p>Geef de uiterste besteldag en -tijd van herhalen op van medicatie wat per weeklevering geleverd moet worden.</p>
-        <select name="weekdays" id="day-select-order" data-day-input="deadline-delivery-result">
+        <select 
+          name="weekdays" 
+          id="day-select-order" 
+          data-day-input="deadline-delivery-result"
+          data-delivery="input"
+          >
             <option value="">--Kies een dag--</option>
             <option value="0">Maandag</option>
             <option value="1">Dinsdag</option>
@@ -83,20 +107,31 @@
             <option value="5">Zaterdag</option>
             <option value="6">Zondag</option>
         </select>
-        <input type="time" name="" id="deadline-order-time" value="00:00" data-time-input="deadline-delivery-result">
-        
+        <input 
+          type="time" 
+          id="deadline-order-time" 
+          value="00:00" 
+          data-time-input="deadline-delivery-result"
+          data-delivery="input"
+          >
         <p>Geef de dag van de weeklevering op</p>
-        <select name="weekdays" id="day-select-delivery" data-day-input="deadline-delivery-result">
-          <option value="">--Kies een dag--</option>
-          <option value="0">Maandag</option>
-          <option value="1">Dinsdag</option>
-          <option value="2">Woensdag</option>
-          <option value="3">Donderdag</option>
-          <option value="4">Vrijdag</option>
-          <option value="5">Zaterdag</option>
-          <option value="6">Zondag</option>
+        <select 
+          name="weekdays" 
+          id="day-select-delivery" 
+          data-day-input="deadline-delivery-result"
+          data-delivery="input"
+          data-delivery="input"
+          >
+            <option value="">--Kies een dag--</option>
+            <option value="0">Maandag</option>
+            <option value="1">Dinsdag</option>
+            <option value="2">Woensdag</option>
+            <option value="3">Donderdag</option>
+            <option value="4">Vrijdag</option>
+            <option value="5">Zaterdag</option>
+            <option value="6">Zondag</option>
         </select>
-        <button id="calc-deadline-delivery-btn">Bereken deadline leverdag</button>
+        <!-- <button id="calc-deadline-delivery-btn">Bereken deadline leverdag</button> -->
         
         <div id="deadline-delivery-result">
           <!-- RESULT -->
