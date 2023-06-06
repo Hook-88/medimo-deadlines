@@ -1,4 +1,4 @@
-import { Deadlines } from './deadline.js'
+import { Deadlines } from './Deadline.js'
 import { clearContainer, resetTimeInput, resetDayInput } from './helpers.js'
 
 let newDeadline = new Deadlines

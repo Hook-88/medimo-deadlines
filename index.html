@@ -25,7 +25,7 @@
         <p>Geef de uiterste tijd van voorschrijven op van medicatie wat vandaag nog geleverd moet worden.</p>
         <input type="time" name="" id="deadline-today-time" value="00:00" data-time-input="deadline-today-result">
         <!-- <button id="calc-deadline-today-btn">Bereken deadline vandaag</button> -->
-        <div id="deadline-today-result">
+        <div id="deadline-today-result" class="result-container">
           <!-- RESULT -->
         </div>
       </div>  
@@ -36,28 +36,31 @@
       <h2 class="card-title">Bereken deadline Baxter</h2>
       <div class="card-content">
         <p>Geef de uiterste tijd van voorschrijven op van medicatie wat vandaag per baxter geleverd moet worden.</p>
-        <select 
-          name="weekdays" 
-          id="day-select-prescription" 
-          data-day-input="deadline-baxter-result" 
-          data-baxter="input"
-          >
-            <option value="">--Kies een dag--</option>
-            <option value="0">Maandag</option>
-            <option value="1">Dinsdag</option>
-            <option value="2">Woensdag</option>
-            <option value="3">Donderdag</option>
-            <option value="4">Vrijdag</option>
-            <option value="5">Zaterdag</option>
-            <option value="6">Zondag</option>
-        </select>
-        <input 
-          type="time" 
-          id="deadline-baxter-prescription-time" 
-          value="00:00" 
-          data-time-input="deadline-baxter-result" 
-          data-baxter="input"
-          >
+        <!-- <div class="card-input"> -->
+          <select 
+            name="weekdays" 
+            id="day-select-prescription" 
+            data-day-input="deadline-baxter-result" 
+            data-baxter="input"
+            >
+              <option value="">--Kies een dag--</option>
+              <option value="0">Maandag</option>
+              <option value="1">Dinsdag</option>
+              <option value="2">Woensdag</option>
+              <option value="3">Donderdag</option>
+              <option value="4">Vrijdag</option>
+              <option value="5">Zaterdag</option>
+              <option value="6">Zondag</option>
+          </select>
+          <input 
+            type="time" 
+            id="deadline-baxter-prescription-time" 
+            value="00:00" 
+            data-time-input="deadline-baxter-result" 
+            data-baxter="input"
+            >
+        <!-- </div> -->
+        
         <p>Geef de ingangsdag en -tijd op van de baxter</p>
         <select 
           name="weekdays" 
@@ -82,7 +85,7 @@
           data-baxter="input"
         >
         <!-- <button id="calc-deadline-baxter-btn">Bereken deadline baxter</button> -->        
-        <div id="deadline-baxter-result">
+        <div id="deadline-baxter-result" class="result-container">
           <!-- RESULT -->
         </div>
       </div>   
@@ -133,7 +136,7 @@
         </select>
         <!-- <button id="calc-deadline-delivery-btn">Bereken deadline leverdag</button> -->
         
-        <div id="deadline-delivery-result">
+        <div id="deadline-delivery-result" class="result-container">
           <!-- RESULT -->
         </div>
       </div>  
