@@ -1,8 +1,8 @@
 import { Deadlines } from './Deadline.js'
 import { clearContainer, resetTimeInput, resetDayInput } from './helpers.js'
+import {banner} from './banner.js'
 
 let newDeadline = new Deadlines
-const deadlineCopiedBanner = document.getElementById('copy-deadline-banner')
 
 document.addEventListener('click', e => { 
   if (e.target.dataset.reset) {
@@ -11,7 +11,7 @@ document.addEventListener('click', e => {
     resetDayInput(document.querySelectorAll(`[data-day-input="${e.target.dataset.reset}"]`))
   } else if(e.target.dataset.copy) {
     navigator.clipboard.writeText(newDeadline[e.target.dataset.copy])
-    handleCopyBanner()
+    banner.handleCopyBanner()
   }
 })
 
@@ -37,19 +37,6 @@ function renderBaxterDeadline() {
 
 function renderDeliveryDeadline() {
   document.getElementById('deadline-delivery-result').innerHTML = newDeadline.getDeadlineDeliveryHtml()
-}
-
-function showCopyBanner() {
-  deadlineCopiedBanner.classList.remove('hidden')
-}
-
-function hideCopyBanner() {
-  deadlineCopiedBanner.classList.add('hidden')
-}
-
-function handleCopyBanner() {
-  showCopyBanner()
-  setTimeout(hideCopyBanner, 1500)
 }
 
 
