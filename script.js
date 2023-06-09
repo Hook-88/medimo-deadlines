@@ -11,7 +11,7 @@ document.addEventListener('click', e => {
     resetDayInput(document.querySelectorAll(`[data-day-input="${e.target.dataset.reset}"]`))
   } else if(e.target.dataset.copy) {
     navigator.clipboard.writeText(newDeadline[e.target.dataset.copy])
-    showCopyBanner()
+    handleCopyBanner()
   }
 })
 
@@ -40,7 +40,16 @@ function renderDeliveryDeadline() {
 }
 
 function showCopyBanner() {
-  console.log(deadlineCopiedBanner)
+  deadlineCopiedBanner.classList.remove('hidden')
+}
+
+function hideCopyBanner() {
+  deadlineCopiedBanner.classList.add('hidden')
+}
+
+function handleCopyBanner() {
+  showCopyBanner()
+  setTimeout(hideCopyBanner, 1500)
 }
 
 
