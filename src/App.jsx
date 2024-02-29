@@ -1,3 +1,4 @@
+import Footer from "./components/Footer"
 import Header from "./components/Header"
 import MainContent from "./components/MainContent"
 
@@ -11,6 +12,9 @@ function App() {
             <MainContent>
                 <h1>here goes main content</h1>
             </MainContent>
+            <Footer>
+                <small>&copy; Copyright Sheit</small>
+            </Footer>
         </div>
     )
     
