@@ -6,10 +6,31 @@ import { useState } from "react"
 
 export default function DeadlineToday() {
     const [showDeadline, setShowDeadline] = useState(false)
+    const [formData, setFormData] = useState("")
+    const [deadlineToday, setDeadlineToday] = useState(null)
 
     function handleSubmit() {
+        getDeadlineToday()
         setShowDeadline(true)
+        setFormData("")
+        
     }
+
+    function handleChange(event) {
+        setFormData(event.target.value)   
+    }
+
+    function getTimeStrInMinutes(str) {
+        
+        return Number(str.slice(0,2)) * 60 + Number(str.slice(3))
+    }
+
+    function getDeadlineToday() {
+        setDeadlineToday(
+            (24 * 60) - getTimeStrInMinutes(formData)
+        )
+    }
+
     
     return (
         <section className="max-w-md">
@@ -20,7 +41,13 @@ export default function DeadlineToday() {
             <Form onSubmit={handleSubmit}>
 
                 <Card className="mb-1">
-                    <Input type="time" id="time-deadline-today" required>
+                    <Input 
+                        type="time" 
+                        id="time-deadline-today" 
+                        required
+                        onChange={handleChange}
+                        value={formData}
+                    >
                         <Input.Label>Geef de uiterste tijd van voorschrijven op: &nbsp;</Input.Label>
                     </Input>
                 </Card>
@@ -34,7 +61,7 @@ export default function DeadlineToday() {
                                 type="button" 
                                 className="py-1 px-6 text-lg font-bold border-2 border-black bg-transparent text-black"
                                 >
-                                720
+                                {deadlineToday}
                             </Button> 
                         </p>
                     </Card>
