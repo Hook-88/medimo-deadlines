@@ -1,7 +1,7 @@
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import MainContent from "./components/MainContent"
-import Card from "./components/Card"
+import DeadlineToday from "./components/DeadlineToday"
 
 function App() {
 
@@ -11,9 +11,7 @@ function App() {
                 <h1 className="text-2xl">Medimo deadlines</h1>
             </Header>
             <MainContent>
-                <Card>
-                    <h1>here goes deadline today</h1>
-                </Card>
+                <DeadlineToday />
             </MainContent>
             <Footer>
                 <small>&copy; Copyright Sheit</small>
