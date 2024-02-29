@@ -4,55 +4,55 @@ import Input from "./Input/Index"
 import Button from "./Button"
 import { useState } from "react"
 
-export default function DeadlineToday() {
+export default function DeadlineBaxter() {
     const [showDeadline, setShowDeadline] = useState(false)
     const [formData, setFormData] = useState("")
-    const [deadlineToday, setDeadlineToday] = useState(null)
+    const [deadlineBaxter, setDeadlineBaxter] = useState(null)
 
     function handleSubmit() {
-        getDeadlineToday()
         setShowDeadline(true)
-        setFormData("")
     }
 
     function handleChange(event) {
-        setFormData(event.target.value)   
-    }
 
-    function getTimeStrInMinutes(str) {
-        
-        return Number(str.slice(0,2)) * 60 + Number(str.slice(3))
-    }
-
-    function getDeadlineToday() {
-        setDeadlineToday(
-            (24 * 60) - getTimeStrInMinutes(formData)
-        )
     }
 
     function copyToClipboard() {
-        navigator.clipboard.writeText(deadlineToday)
+        navigator.clipboard.writeText(deadlineBaxter)
     }
 
     
     return (
         <section className="max-w-md">
             <Card className="mb-1">
-                <Card.Title>Deadline vandaag</Card.Title>
+                <Card.Title>Deadline Baxter</Card.Title>
             </Card>
 
             <Form onSubmit={handleSubmit}>
 
                 <Card className="mb-1">
-                    <Input 
-                        type="time" 
-                        id="time-deadline-today" 
-                        required
-                        onChange={handleChange}
-                        value={formData}
-                    >
-                        <Input.Label>Geef de uiterste tijd van voorschrijven op: &nbsp;</Input.Label>
-                    </Input>
+                    <p className="mb-3">Geef en tijd van sturen GDS-opdracht:</p>
+                    <div className="flex">
+                        <select name="" id="" className="p-2 bg-slate-200 border-2 border-slate-200 rounded mr-2 grow" required>
+                            <option selected disabled>Kies een dag</option>
+                            <option value={0}>Maandag</option>
+                            <option value={1}>Dinsdag</option>
+                            <option value={2}>Woensdag</option>
+                            <option value={3}>Donderdag</option>
+                            <option value={4}>Vrijdag</option>
+                            <option value={5}>Zaterdag</option>
+                            <option value={6}>Zondag</option>
+                        </select>
+                        
+                        <Input 
+                            type="time" 
+                            id="time-deadline-today" 
+                            required
+                            onChange={handleChange}
+                            value={formData}
+                            >
+                        </Input>
+                    </div>
                 </Card>
 
                 {
