@@ -1,8 +1,12 @@
+import Header from "./components/Header"
+
 function App() {
 
     return (
-        <div>
-            <h1>hello world</h1>
+        <div className="h-svh flex flex-col">
+            <Header>
+                <h1>Medimo deadlines</h1>
+            </Header>
         </div>
     )
     
