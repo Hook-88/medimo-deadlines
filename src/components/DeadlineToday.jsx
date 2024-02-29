@@ -13,8 +13,8 @@ export default function DeadlineToday() {
         getDeadlineToday()
         setShowDeadline(true)
         setFormData("")
-        
     }
+
 
     function handleChange(event) {
         setFormData(event.target.value)   
@@ -29,6 +29,10 @@ export default function DeadlineToday() {
         setDeadlineToday(
             (24 * 60) - getTimeStrInMinutes(formData)
         )
+    }
+
+    function copyToClipboard() {
+        navigator.clipboard.writeText(deadlineToday)
     }
 
     
@@ -60,6 +64,7 @@ export default function DeadlineToday() {
                             <Button 
                                 type="button" 
                                 className="py-1 px-6 text-lg font-bold border-2 border-black bg-transparent text-black"
+                                onClick={copyToClipboard}
                                 >
                                 {deadlineToday}
                             </Button> 
