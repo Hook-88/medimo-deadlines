@@ -12,7 +12,6 @@ export default function DeadlineToday() {
     function handleSubmit() {
         getDeadlineToday()
         setShowDeadline(true)
-        setFormData("")
     }
 
     function handleChange(event) {
@@ -36,20 +35,21 @@ export default function DeadlineToday() {
 
     
     return (
-        <section className="max-w-md">
+        <section className="">
             <Card className="mb-1">
                 <Card.Title>Deadline vandaag</Card.Title>
             </Card>
 
             <Form onSubmit={handleSubmit}>
 
-                <Card className="mb-1">
+                <Card className="mb-1 flex items-center">
                     <Input 
                         type="time" 
                         id="time-deadline-today" 
                         required
                         onChange={handleChange}
                         value={formData}
+                        className="w-[4.3em] px-0 text-center"
                     >
                         <Input.Label>Geef de uiterste tijd van voorschrijven op: &nbsp;</Input.Label>
                     </Input>
@@ -57,17 +57,18 @@ export default function DeadlineToday() {
 
                 {
                     showDeadline &&
-                    <Card className="mb-1">
+                    <Card className="mb-1 flex items-center">
                         <p>
                             De deadline is : &nbsp;
-                            <Button 
+                            
+                        </p>
+                        <Button 
                                 type="button" 
-                                className="py-1 px-6 text-lg font-bold border-2 border-black bg-transparent text-black"
+                                className="py-1 px-6 text-lg font-bold border-2 border-black bg-transparent text-black grow"
                                 onClick={copyToClipboard}
                                 >
                                 {deadlineToday}
                             </Button> 
-                        </p>
                     </Card>
                 }
 

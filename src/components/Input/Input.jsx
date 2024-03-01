@@ -11,7 +11,7 @@ export default function Input({className, children, type = "text", id, ...rest})
     
     return (
         <Inputcontext.Provider value={{id}}>
-        <>
+        <div className="flex items-center justify-between">
             {children}
             <input 
                 type={type} 
@@ -19,7 +19,7 @@ export default function Input({className, children, type = "text", id, ...rest})
                 id={id}
                 {...rest}
                 />
-        </>
+        </div>
         </Inputcontext.Provider>
     )
 }

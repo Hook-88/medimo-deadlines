@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import MainContent from "./components/MainContent"
 import DeadlineToday from "./components/DeadlineToday"
 import DeadlineBaxter from "./components/DeadlineBaxter"
+import DeadlineDelivery from "./components/DeadlineDelivery"
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
             <MainContent>
                 <DeadlineToday />
                 <DeadlineBaxter />
+                <DeadlineDelivery />
             </MainContent>
             <Footer>
                 <small>&copy; Copyright Sheit</small>
