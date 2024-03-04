@@ -2,12 +2,14 @@ import Card from "./Card/Index"
 import Form from "./Form"
 import Input from "./Input/Index"
 import Button from "./Button"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { AppContext } from "../App"
 
 export default function DeadlineToday() {
     const [showDeadline, setShowDeadline] = useState(false)
     const [formData, setFormData] = useState("")
     const [deadlineToday, setDeadlineToday] = useState(null)
+    const {handleShowBanner} = useContext(AppContext)
 
     function handleSubmit() {
         getDeadlineToday()
@@ -31,6 +33,7 @@ export default function DeadlineToday() {
 
     function copyToClipboard() {
         navigator.clipboard.writeText(deadlineToday)
+        handleShowBanner()
     }
 
     

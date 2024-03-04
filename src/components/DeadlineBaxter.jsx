@@ -3,12 +3,14 @@ import Form from "./Form"
 import Input from "./Input/Index"
 import Button from "./Button"
 import DaySelector from "./DaySelector"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { AppContext } from "../App"
 
 export default function DeadlineBaxter() {
     const [showDeadline, setShowDeadline] = useState(false)
     const [formData, setFormData] = useState({["start-baxter-time"]: "00:00"})
     const [deadlineBaxter, setDeadlineBaxter] = useState(null)
+    const {handleShowBanner} = useContext(AppContext)
 
     function handleSubmit() {
         
@@ -54,6 +56,7 @@ export default function DeadlineBaxter() {
 
     function copyToClipboard() {
         navigator.clipboard.writeText(deadlineBaxter)
+        handleShowBanner()
     }
 
     
