@@ -18,7 +18,7 @@ function App() {
                 <DeadlineDelivery />
             </MainContent>
             <Footer>
-                <small>&copy; Copyright Sheit</small>
+                <small>Hook88 &copy; 2024 All rights reserved</small>
             </Footer>
         </div>
     )

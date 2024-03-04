@@ -73,7 +73,7 @@ export default function DeadlineToday() {
                 }
 
                 <Card className="rounded-t-none">
-                    <Button className="block w-full rounded">Bereken Deadline</Button>
+                    <Button className="block w-full rounded" normal>Bereken Deadline</Button>
                 </Card>
 
             </Form>
