@@ -32,8 +32,9 @@ function App() {
                 <MainContent>
                     <DeadlineToday />
                     <DeadlineBaxter />
-                    <DeadlineDelivery />
+                    <DeadlineDelivery /> 
                 </MainContent>
+                
                 <Footer>
                     <small>Hook88 &copy; 2024 All rights reserved</small>
                 </Footer>

@@ -83,7 +83,7 @@ export default function DeadlineDelivery() {
                 </Card>
 
                 <Card className="mb-1">
-                    <p className="mb-3">Geef stardag en tijd van rol op:</p>
+                    <p className="mb-3">Geef de dag van leveren op:</p>
                     <div className="flex">
                         <DaySelector required name="delivery-day" onChange={handleChange}/>
                     </div>
